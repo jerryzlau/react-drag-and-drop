@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
-class Game extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
+export function observe(receive){
+  setInterval(() => receive([
+    Math.floor(Math.random() * 8),
+    Math.floor(Math.random() * 8)
+  ]), 1000);
 }
-
-export default Game;

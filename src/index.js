@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Board from './components/board';
+import { observe } from './logic/game';
 
-// setInterval(() => {
-//   return ReactDOM.render(<App />, document.getElementById('root'));
-// }, 500);
-
-ReactDOM.render(<App />, document.getElementById('root'));
+observe(knightPosition => 
+  ReactDOM.render(
+    <Board knightPosition={knightPosition} />,
+  document.getElementById('root')
+  )
+);
