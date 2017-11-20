@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Square from './square';
 import Knight from './knight';
 import { moveKnight, canMoveKnight } from '../logic/game';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 class Board extends Component {
   renderSquare(i){
@@ -54,4 +56,4 @@ Board.propTypes = {
   ).isRequired
 };
 
-export default Board;
+export default DragDropContext(HTML5Backend)(Board);
